@@ -1,0 +1,33 @@
+﻿@model List<List<string>>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Knjiga</title>
+</head>
+<body>
+    <div> 
+        <h5>ISBN: @Model[0][0]</h5>
+        <h4>Naziv: </h4>
+        <h3>@Model[0][1]</h3>
+        <h5>Autor: @Model[0][2]</h5>
+        <h6>Datum izdavanja: @Model[0][3]</h6>
+        <h5>Ocena: @Model[0][4]</h5>
+
+        <h3>Komentari: </h3>
+     @foreach(string item in Model[1])
+     {
+         <p>@item</p>
+         <br />
+     }
+
+
+
+    </div>
+</body>
+</html>
