@@ -1,0 +1,82 @@
+﻿@model List<string>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Korpa</title>
+    <meta charset="utf-8" />
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body background="~/Content/Images/knjigamain.jpg">
+    @using (Html.BeginForm("Nazad", "Book", FormMethod.Post))
+    {
+        <div class="container-fluid">
+            <div class="navbar-header" style="padding-left: 10px">
+                <button type="submit" class="btn btn-default navbar-btn pull-left">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </button>
+            </div>
+        </div>
+    }
+
+
+    <div class="col-sm-10 form-group-lg"> 
+
+        @{ 
+            if(Model != null)
+            {
+                <ul>
+                @foreach(string item in Model)
+                {
+                    var pom = item.Split(' ');
+                   <ul>
+                       <li>ISBN: @pom[0]</li>
+                       <li>Naslov: @pom[1]</li>
+                       <li>Autor: @pom[2]</li>
+                       @using (Html.BeginForm("RemoveKorpa", "Book", FormMethod.Post))
+                       {
+                           <input type="hidden" name="isbn" id="isbn" value="@pom[0]" />
+                           <button type="submit" class="btn btn-danger btn-circle ">Obrisi</button>
+                       }
+                   </ul>
+                  
+                       
+                      
+                }
+                    </ul>
+
+                    using (Html.BeginForm("Naruci", "Book", FormMethod.Post))
+                    {
+                    <label>Ime: </label>
+                    <input class="form-control" type="text" name="ime" id="ime" required/>
+                    <label>Prezime: </label>
+                    <input class="form-control" type="text" name="prezime" id="prezime" required />
+                    <label>Adresa: </label>
+                    <input class="form-control" type="text" name="adresa" id="adresa" required />
+                    <label>Broj telefona: </label>
+                    <input class="form-control" type="text" name="telefon" id="telefon" required />
+
+                    <button type="submit" class="btn btn-success btn-circle ">Naruci</button>
+                }
+            }
+            else if (TempData["naruceno"] != null)
+            {
+                <div class="alert alert-success fade in">Vasa narudzbina je uspesna, hvala na poverenju!</div>
+            }
+            else
+            {
+                <div class="alert alert-danger fade in">Korpa je prazna!</div>
+            }
+        }
+
+    </div>
+</body>
+</html>

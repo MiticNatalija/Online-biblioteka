@@ -17,7 +17,7 @@ namespace KnjigeRedis
         {
             InitializeComponent();
            manager = new DataManager();
-         //   manager.deleteLista();
+           manager.deleteLista();
         }
 
         private void btnGet_Click(object sender, EventArgs e)
@@ -25,30 +25,27 @@ namespace KnjigeRedis
             Knjiga k = manager.getKnjiga("123");
             if(k!=null)
            MessageBox.Show( k.Ime);
-            //mora prvo da se doda ova knjiga
+           
 
-             k = manager.getKnjiga("666");
-            if (k != null)
-                MessageBox.Show(k.Ime);
+             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Knjiga k = new Knjiga
             {
-                Autor = "Dragan",
+                Autor = "Ivo Andric",
                 Datum = new DateTime(1990, 10, 10),
-                Ime = "Kako da se utepas",
-                ISBN = "666"
+                Ime = "Na Drini cuprija",
+                ISBN = "123"
             };
-            manager.putKnjiga(k);
-
+          
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<Knjiga> lista = manager.getKnjige();
+            List<Knjiga> lista = manager.getKnjige(10);
             foreach(Knjiga k in lista)
             {
                 if (k == null)
@@ -59,8 +56,9 @@ namespace KnjigeRedis
 
         private void button3_Click(object sender, EventArgs e)
         {
-            manager.deleteKnjiga("666");
-            manager.deleteKnjiga("123");
+          //  manager.deleteKnjiga("666");
+          //  manager.deleteKnjiga("123");
+            manager.deleteLista();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -76,7 +74,7 @@ namespace KnjigeRedis
             double ocena = manager.getOcena("123");
             MessageBox.Show(ocena.ToString());
             int oc =int.Parse(txtOcena.Text);
-            manager.oceni("123", oc);
+            manager.oceni("123", oc,"natica");
          //   manager.oceni("123", 4);
          //   ocena=manager.getOcena("123");
             MessageBox.Show(ocena.ToString());
@@ -86,15 +84,24 @@ namespace KnjigeRedis
 
         private void button6_Click(object sender, EventArgs e)
         {
-          MessageBox.Show(manager.komentarisi("666", "lepa knjiga", "ja").ToString());
+            //manager.deleteKomentar("123", "ja");
+            //manager.deleteKomentar("123", "dd");
+            //manager.deleteKomentar("123", "samo");
+            //manager.deleteKomentar("123", "ok");
+
+            //MessageBox.Show(manager.komentarisi("123", "lepa knjiga", "ja").ToString());
+            //MessageBox.Show(manager.komentarisi("123", "Meni se uopste ne svidja.", "dd").ToString());
+            //MessageBox.Show(manager.komentarisi("123", "Meni se uopste ne svidja.", "samo").ToString());
+            //MessageBox.Show(manager.komentarisi("123", "Meni se uopste ne svidja.", "ok").ToString());
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            List<string> l = manager.getKomentarKnjiga("666");
-            foreach(string kom in l)
+            List<List<string>> l = manager.getKomentarKnjiga("123",2);
+            foreach(List<string> kom in l)
             {
-                MessageBox.Show(kom);
+                foreach(string s in kom)
+                MessageBox.Show(s);
             }
         }
 
@@ -110,6 +117,46 @@ namespace KnjigeRedis
             MessageBox.Show(manager.login("nat", "sifra").ToString());
             MessageBox.Show(manager.login("nata", "sifra").ToString());
             MessageBox.Show(manager.login("nat", "sifa").ToString());
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            manager.addKorpa("111", "neki");
+            manager.addKorpa("155", "neki");
+            manager.addKorpa("111", "neki");
+
+            string[] s = manager.getKorpa("neki");
+            foreach(string si in s)
+            {
+                MessageBox.Show(si);
+            }
+            manager.deleteFromKorpa("neki", "111");
+            s = manager.getKorpa("neki");
+            foreach (string si in s)
+            {
+                MessageBox.Show(si);
+            }
+            s = manager.getKorpa("neki");
+            manager.deleteKorpa("neki");
+            s = manager.getKorpa("neki");
+            foreach (string si in s)
+            {
+                MessageBox.Show(si);
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            manager.deleteAll();
+           // manager.isporuci("natica");
+            //manager.isporuci("nata");
+            //List<List<string>> l = manager.getNarudzbine();
+
+            //foreach (List<string> ls in l)
+            //    foreach (string s in ls)
+            //    {
+            //        MessageBox.Show(s);
+            //    }
         }
     }
 }

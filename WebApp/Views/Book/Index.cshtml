@@ -8,26 +8,150 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Knjiga</title>
+    <title>Knjige</title>
+  
+
+    <meta charset="utf-8" />
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
-<body>
-    <div> 
-        <h5>ISBN: @Model[0][0]</h5>
-        <h4>Naziv: </h4>
-        <h3>@Model[0][1]</h3>
-        <h5>Autor: @Model[0][2]</h5>
-        <h6>Datum izdavanja: @Model[0][3]</h6>
-        <h5>Ocena: @Model[0][4]</h5>
+<body background="~/Content/Images/knjigamain.jpg">
+@using (Html.BeginForm("Nazad", "Book", FormMethod.Post))
+{
+    <div class="container-fluid">
+        <div class="navbar-header" style="padding-left: 10px">
+            <button type="submit" class="btn btn-default navbar-btn pull-left" >
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </button>
+            </div>
+        </div>
+}
+    <br />
+    <br />
+    <di class="col-sm-10 form-group-lg">
+        @{ if (Model == null)
+            {
 
-        <h3>Komentari: </h3>
-     @foreach(string item in Model[1])
-     {
-         <p>@item</p>
-         <br />
-     }
+                <div class="alert alert-danger fade in">Ne postoji knjiga!</div>
+            }
+            else
+            {
+                <h5>ISBN: @ViewBag.isbn</h5>
+                <h4>Naziv: </h4>
+                        <h3>@ViewBag.ime</h3>
+                        <h5>Autor: @ViewBag.autor</h5>
+                        <h6>Datum izdavanja: @ViewBag.datum</h6>
+                        <h5>Ocena: @ViewBag.ocena</h5>
+                        <h5><i class="glyphicon glyphicon-eye-open"></i> @ViewBag.pregledi</h5>
 
 
+                if (Session["korisnik"] != null)
+                {
+                    using (Html.BeginForm("AddKorpa", "Book", FormMethod.Post))
+                    {
+                        <input type="hidden" name="isbn" id="isbn" value="@ViewBag.isbn" />
+                        <button type="submit" class="btn btn-info btn-circle ">Stavi u korpu</button>
+                       if (TempData["dodato"] != null)
+                        {
+                            <p>Dodato u korpu!</p>
+                        }
+                    }
+                    <div>Oceni knjigu: </div>
+                        using (Html.BeginForm("PutOcena", "Book", FormMethod.Post))
+                        {
+                    <div class="form-check-inline">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="ocena1" name="ocenaradio" value="1">
+                        <label class="form-check-label" for="materialInline1">1</label>
+                    
+                    
+                        <input type="radio" class="form-check-input" id="ocena2" name="ocenaradio" value="2">
+                        <label class="form-check-label" for="materialInline1">2</label>
+                    
+                 
+                        <input type="radio" class="form-check-input" id="ocena3" name="ocenaradio" value="3">
+                        <label class="form-check-label" for="materialInline1">3</label>
+                  
+                        <input type="radio" class="form-check-input" id="ocena4" name="ocenaradio" value="4">
+                        <label class="form-check-label" for="materialInline1">4</label>
+                   
+                        <input type="radio" class="form-check-input" id="ocena5" name="ocenaradio" value="5" checked="checked">
+                        <label class="form-check-label" for="materialInline1">5</label>
+                        <input type="hidden" name="isbn" id="isbn" value="@ViewBag.isbn" />
+                        <button type="submit" class="btn btn-info btn-circle ">Oceni</button>
+                    </div>
+                        </div>
+                    }
+                <div class="widget-area no-padding blank">
+                    <div class="status-upload">
+                        <div>Ostavi svoj utisak: </div>
+                      @using (Html.BeginForm("PutKomentar", "Book", FormMethod.Post))
+                      {
 
-    </div>
+                        <textarea class="form-control z-depth-1" rows="5" name="komentar" id="komentar" placeholder="Komentar..."></textarea>
+                        <input type="hidden" name="isbn" id="isbn" value="@ViewBag.isbn"/>
+                        <br />
+                        <button type="submit" class="btn btn-info btn-circle btn-lg"><i class="glyphicon glyphicon-ok"></i></button>
+                      }
+                    </div>
+                    
+                </div>
+               
+        
+                }
+
+
+                <h3>Komentari: </h3>
+                using (Html.BeginForm("UcitajKomentare", "Book", FormMethod.Post))
+                {
+                    <input type="hidden" name="isbn" id="isbn" value="@ViewBag.isbn" />
+                        <button type="submit" class="btn btn-default btn-circle btn-lg ">Još</button>
+
+
+                }
+                foreach (List<string> item in Model)
+                {
+                    <div style='border-bottom:1px solid #ccc;' class="col-xs-12 col-md-8">
+                        <div>
+                        <p><i class="glyphicon glyphicon-user"></i> @item[0]</p>
+                        <p>@item[1] </p>
+                        <p><i class="glyphicon glyphicon-thumbs-up"></i> @item[2]   <i class="glyphicon glyphicon-thumbs-down"></i> @item[3]</p>
+                        </div>
+                        @{ if (Session["korisnik"] != null)
+                            {
+                        <div class="col-xs-6 col-md-4">
+                            @using (Html.BeginForm("Like", "Book", FormMethod.Post))
+                            {
+                            <div>
+                                <input type="hidden" name="isbn" id="isbn" value="@ViewBag.isbn" />
+                                <input type="hidden" name="user" id="user" value="@item[0]" />
+                                <input type="hidden" name="komentarId" id="komentarId" value="@item[4]" />  @*dodato*@
+                                <button type="submit" class="btn btn-primary btn-circle "><i class="glyphicon glyphicon-thumbs-up"></i></button>
+
+                            </div>
+                            }
+                            @using (Html.BeginForm("Unlike", "Book", FormMethod.Post))
+                            {
+                            <div>
+                                <input type="hidden" name="isbn" id="isbn" value="@ViewBag.isbn" />
+                                <input type="hidden" name="user" id="user" value="@item[0]" />
+                                <input type="hidden" name="komentarId" id="komentarId" value="@item[4]" />  @*dodato*@
+                                <button type="submit" class="btn btn-danger btn-circle "><i class="glyphicon glyphicon-thumbs-down"></i></button>
+                            </div>
+                            }
+                            </div>
+                            }
+                            }
+                        </div>
+                                    }
+                                }
+
+
+              }
+                  
+
+                    </div>
 </body>
 </html>

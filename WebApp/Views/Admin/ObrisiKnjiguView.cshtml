@@ -1,0 +1,59 @@
+﻿@model int?
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Knjige</title>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Web Knjige</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body background="~/Content/Images/knjigamain.jpg">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li>@Html.ActionLink("Dodaj knjigu", "IndexAdd", "Admin")</li>
+                    <li>@Html.ActionLink("Obrisi knjigu", "IndexDel", "Admin")</li>
+                    <li>@Html.ActionLink("Narudzbine", "IndexNarudzbina", "Admin")</li>
+                    <li>@Html.ActionLink("Odjavi se", "Index", "Home")</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+            <div>
+                @{
+                    if (Model == 1)
+                    {
+                        <div class="alert alert-success fade in" >Knjiga je obrisana!</div>
+                    }
+                }
+                <div class="col-lg-4">
+                    <div>
+                        <div class="f2">
+                            @using (Html.BeginForm("DeleteKnjiga", "Admin", FormMethod.Post))
+                            {
+                                <h3>Obrisi knjigu</h3>
+                                <br />
+                                <label>ISBN:</label>
+                                <br />
+                                <input class="form-control" name="isbn" id="isbn" type="text" />
+                                <br />
+
+
+                                <button type="submit" class="btn btn-lg btn-success">Obrisi Knjigu</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

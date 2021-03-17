@@ -1,0 +1,68 @@
+﻿@model List<List<string>>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Knjige</title>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Web Knjige</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body background="~/Content/Images/knjigamain.jpg">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li>@Html.ActionLink("Dodaj knjigu", "IndexAdd", "Admin")</li>
+                    <li>@Html.ActionLink("Obrisi knjigu", "IndexDel", "Admin")</li>
+                    <li>@Html.ActionLink("Narudzbine", "IndexNarudzbina", "Admin")</li>
+                    <li>@Html.ActionLink("Odjavi se", "Index", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-sm-10 form-group-lg"> 
+        @{ if(Model.Count == 0)
+            {
+                <div class="alert alert-warning fade in">Nema novih narudzbina!</div>
+            }
+            else
+            {
+                foreach (List<string> item in Model)
+                {
+                    using (Html.BeginForm("Isporuci", "Admin", FormMethod.Post))
+                    {
+                    <div class="block-example border border-success">
+                     <p>  Ime i prezime: @item[1]</p>
+                        <p>  Adresa: @item[2]</p>
+                        <p>  Telefon: @item[3]</p>
+                        <p>Knjige: </p>
+                        @for (int i = 4; i < item.Count; i++)
+                        {
+                            <p>@item[i]</p>
+                        }
+                        <input type="hidden" name="kupac" id="kupac" value="@item[0]" />
+                        <button type="submit" class="btn btn-lg btn-success">Isporuci</button>
+                    </div>
+                        }
+                    }
+                }
+
+
+            }
+
+
+    </div>
+</body>
+</html>

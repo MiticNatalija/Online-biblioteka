@@ -106,8 +106,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kategorija.cs" />
     <Compile Include="Knjiga.cs" />
+    <Compile Include="Korisnik.cs" />
     <Compile Include="Ocena.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,25 +10,55 @@ namespace KnjigeRedis
 {
     public class DataManager
     {
-      //  private string globalCounterKey = "next.url.id";
-
+       
         readonly RedisClient redis = new RedisClient(Config.SingleHost);
-
+        private string globalCounterKey = "next.comment.id";
         public DataManager()
         {
-            Knjiga k = new Knjiga();
-            k.ISBN = "123";
-            k.Ime = "djsnvf";
-            k.Autor = "rfdse";
-            k.Datum = new DateTime(2000, 12, 12);
+            var test = redis.Get<object>(globalCounterKey);
+            if (test==null)
+            {
+                var redisCounterSetup = redis.As<string>();
+                redisCounterSetup.SetEntry(globalCounterKey, "1");
+            }
 
-            if (redis.Exists("123")==1)
-                return;
-            redis.Set<string>("123", k.ToJsonString());
-          //  redis.AddItemToSet(":knjige", "123");
-            redis.PushItemToList("22" + ":knjige", k.ISBN);
-            
+            Knjiga k = new Knjiga();
+            k.ISBN = "1001";
+            k.Ime = "Majstor i Margarita";
+            k.Autor = "Mihail Bulgakov";
+            k.Datum = new DateTime(1966, 12, 12);
+
+            if (redis.Exists("1001") == 0)
+            {
+                redis.Set<string>("1001", k.ToJsonString());
+                redis.LPush("22" + ":knjige", k.ISBN.ToAsciiBytes());
+            }
+            if (redis.Exists("1002") == 0)
+            {
+                k = new Knjiga();
+                k.ISBN = "1002";
+                k.Ime = "Vreme vlasti";
+                k.Autor = "Dobrica Cosic";
+                k.Datum = new DateTime(1996, 12, 12);
+                redis.Set<string>("1002", k.ToJsonString());
+                redis.LPush("22" + ":knjige", k.ISBN.ToAsciiBytes());
+            }
+            if (redis.Exists("1003") == 0)
+            {
+                k = new Knjiga();
+                k.ISBN = "1003";
+                k.Ime = "Tvrdjava";
+                k.Autor = "Mesa Selimovic";
+                k.Datum = new DateTime(1991, 12, 12);
+                redis.Set<string>("1003", k.ToJsonString());
+                redis.LPush("22" + ":knjige", k.ISBN.ToAsciiBytes());
+            }
+          
+            if (redis.Exists("admin") == 0)
+                redis.Set<string>("admin", "admin");
+
         }
+       
         public Knjiga getKnjiga(string isbn)
         {
            string knjiga = redis.Get<string>(isbn);
@@ -44,23 +74,22 @@ namespace KnjigeRedis
             if (redis.Exists(k.ISBN) == 1)
                 return;
             redis.Set<string>(k.ISBN, k.ToJsonString());
-            //redis.AddItemToSet(":knjige", k.ISBN);
-            redis.PushItemToList("22"+":knjige", k.ISBN);
+            redis.LPush("22"+":knjige", k.ISBN.ToAsciiBytes());
         }
-        public List<Knjiga> getKnjige()
+        public List<Knjiga> getKnjige(int broj)
         {
             List<Knjiga> lista = new List<Knjiga>();
             long duzina=redis.LLen("22" + ":knjige");
-            if (duzina > 10)
-                duzina = 10;
+            if (duzina > broj)
+                duzina = broj-1;
             
             foreach (string id in redis.GetRangeFromList("22"+":knjige", 0, (int)duzina))
             {
                 string knjiga= redis.Get<string>(id);
                 Knjiga k = (Knjiga)JsonSerializer.DeserializeFromString(knjiga, typeof(Knjiga));
-                lista.Add(k);
+                lista.Insert(0,k);
             }
-
+            lista.Reverse();
             return lista;
         }
         public void deleteLista()
@@ -69,6 +98,7 @@ namespace KnjigeRedis
             foreach (string s in l)
                 deleteKnjiga(s);
             redis.RemoveAllFromList("22" + ":knjige");
+            
         }
         public void deleteKnjiga(string isbn)
         {
@@ -94,8 +124,46 @@ namespace KnjigeRedis
             redis.Incr(isbn + ":clicks");
         }
        
-        public void oceni(string isbn,int ocena)
+        public void oceni(string isbn,int ocena,string user)
         {
+            if (redis.SIsMember(isbn + ":oceneuser", user.ToAsciiBytes()) == 1)
+            {
+              string pom=  redis.Get<string>(isbn + user + ":ocena");
+                redis.Set<string>(isbn + user + ":ocena", ocena.ToString());
+                int p;
+                int.TryParse(pom, out p);
+               
+
+                string oc = redis.Get<string>(isbn + ":ocena");
+                Ocena o = (Ocena)JsonSerializer.DeserializeFromString(oc, typeof(Ocena));
+                if (p == 1)
+                    o.jedan--;
+                else if (p == 2)
+                    o.dva--;
+                else if (p == 3)
+                    o.tri--;
+                else if (p == 4)
+                    o.cetiri--;
+                else if (p == 5)
+                    o.pet--;
+                if (ocena == 1)
+                    o.jedan++;
+                else if (ocena == 2)
+                    o.dva++;
+                else if (ocena == 3)
+                    o.tri++;
+                else if (ocena == 4)
+                    o.cetiri++;
+                else if (ocena == 5)
+                    o.pet++;
+                double pomm = o.jedan + 2.0 * o.dva + 3.0 * o.tri + 4.0 * o.cetiri + 5.0 * o.pet;
+                o.ocena = pomm / o.brojGlasova;
+                redis.Set<string>(isbn + ":ocena", o.ToJsonString());
+
+                return;
+            }
+            redis.Set<string>(isbn + user + ":ocena", ocena.ToString());
+            redis.AddItemToSet(isbn + ":oceneuser", user);
             if (redis.Exists(isbn + ":ocena") == 1)
             {
                string oc= redis.Get<string>(isbn + ":ocena");
@@ -155,51 +223,124 @@ namespace KnjigeRedis
            return System.Math.Round(ocena.ocena, 2);
             
         }
-        public bool komentarisi(string isbn,string komentar,string user)
+        public string komentarisi(string isbn,string komentar,string user)
         {
-            //mozda 1 2 3 da vraca jer samo jednom moze da se komentarise
-            //ili da se ubaci brojac pa da moze vise puta da komentarise
-            if (redis.Exists(isbn) == 0)
-                return false;
-            
-            if (redis.Exists(isbn + user + ":koment") == 0)
-            {
-                redis.PushItemToList(isbn + ":komentari", komentar);
-                redis.SetEntryInHash(isbn + user + ":koment", "komentar", komentar);
-                redis.SetEntryInHash(isbn + user + ":koment", "likes", "0");
-                redis.SetEntryInHash(isbn + user + ":koment", "unlikes", "0");
-            }
-            return true;
+         
+            if (redis.Exists(isbn) == 0 || komentar=="")
+                 return "";
+            long nextId = redis.Incr(globalCounterKey);
+            string g = isbn + user + nextId.ToString("x");
+            redis.LPush(isbn + ":komentari", g.ToAsciiBytes());
+            redis.SetEntryInHash(g + ":koment", "user", user);
+            redis.SetEntryInHash(g + ":koment", "komentar", komentar);
+            redis.SetEntryInHash(g + ":koment", "likes", "0");
+            redis.SetEntryInHash(g + ":koment", "unlikes", "0");
 
+            //if (redis.Exists(isbn + user + ":koment") == 0)
+            //{
+
+            //    string g = isbn + user;
+            //    redis.LPush(isbn + ":komentari", g.ToAsciiBytes());
+            //    redis.SetEntryInHash(isbn + user + ":koment", "user", user);
+            //    redis.SetEntryInHash(isbn + user + ":koment", "komentar", komentar);
+            //    redis.SetEntryInHash(isbn + user + ":koment", "likes", "0");
+            //    redis.SetEntryInHash(isbn + user + ":koment", "unlikes", "0");
+            //}
+            return g;
+         
         }
-        public List<string> getKomentarKnjiga(string isbn)
+      
+        public List<List<string>> getKomentarKnjiga(string isbn,int br)
         {
-            List<string> lista=new List<string>();
-            long len = redis.LLen(isbn + ":komentari");
-            if (len > 10)
-                len = 10;
-            foreach (string s in redis.GetRangeFromList(isbn + ":komentari", 0,(int) len))
+          
+
+            List<List<string>> lista=new List<List<string>>();
+            long ukupno = redis.LLen(isbn + ":komentari");
+            if (ukupno > br)
+                ukupno = br-1;
+            List<string> komen = redis.GetRangeFromList(isbn + ":komentari", 0, (int)ukupno);
+           
+            foreach (string s in komen)
             {
-                lista.Add(s);
+                var hash = redis.GetAllEntriesFromHash(s+":koment");
+                List<string> pom = new List<string>(); //ovde da se ubaci jos jedno polje
+               
+                pom.Add(hash["user"]);
+                pom.Add(hash["komentar"]);
+                pom.Add(hash["likes"]);
+                pom.Add(hash["unlikes"]);
+                pom.Add(s);
+                lista.Add(pom);
             }
+            lista.Reverse();
             return lista;
 
         }
-        public void like(string isbn,string user)
+        public void deleteKomentar(string isbn,string user)
         {
-            var hash = redis.GetAllEntriesFromHash(isbn + user + ":koment");
+           // redis.Remove(isbn + ":komentari");
+           // redis.Remove(isbn + user + ":koment");
+        }
+      
+       
+
+        public void like(string isbn,string owner,string user,string komentId)
+        {
+            //owner je g
+            if (owner.Equals(user))
+                return;
+            if (redis.SIsMember(komentId + ":likes", user.ToAsciiBytes()) == 1)
+            {
+                return;
+            }
+            if (redis.SIsMember(komentId + ":unlikes", user.ToAsciiBytes()) == 1)
+            {
+
+                redis.RemoveItemFromSet(komentId + ":unlikes", user);
+                // var h = redis.GetAllEntriesFromHash(isbn + owner + ":koment");
+                var h = redis.GetAllEntriesFromHash(komentId + ":koment");
+                int li = int.Parse(h["unlikes"]);
+                if (li > 0)
+                {
+                    li--;
+                    redis.SetEntryInHash(komentId + ":koment", "unlikes", li.ToString());
+                }
+            }
+
+            redis.AddItemToSet(komentId + ":likes", user);
+            var hash = redis.GetAllEntriesFromHash(komentId + ":koment");
             int l =int.Parse(hash["likes"]);
             l++;
-            redis.SetEntryInHash(isbn + user + ":koment", "likes", l.ToString());
+            redis.SetEntryInHash(komentId + ":koment", "likes", l.ToString());
 
 
         }
-        public void unlike(string isbn, string user)
+        
+        public void unlike(string isbn, string owner,string user,string komentId)//treba da se doradi ako radi za lajk
         {
-            var hash = redis.GetAllEntriesFromHash(isbn + user + ":koment");
+            if (owner.Equals(user))
+                return;
+            if ( redis.SIsMember(komentId + ":unlikes", user.ToAsciiBytes())==1)
+            {
+                return;
+            }
+            if (redis.SIsMember(komentId + ":likes", user.ToAsciiBytes()) == 1)
+            {
+
+                redis.RemoveItemFromSet(komentId + ":likes", user);
+                var h = redis.GetAllEntriesFromHash(komentId + ":koment");
+                int li = int.Parse(h["likes"]);
+                if (li > 0)
+                {
+                    li--;
+                    redis.SetEntryInHash(komentId + ":koment", "likes", li.ToString());
+                }
+            }
+            redis.AddItemToSet(komentId + ":unlikes", user);
+            var hash = redis.GetAllEntriesFromHash(komentId + ":koment");
             int l = int.Parse(hash["unlikes"]);
             l++;
-            redis.SetEntryInHash(isbn + user + ":koment", "unlikes", l.ToString());
+            redis.SetEntryInHash(komentId + ":koment", "unlikes", l.ToString());
 
 
         }
@@ -228,6 +369,71 @@ namespace KnjigeRedis
             if (pass.Equals(s))
                 return true;
             return false;
+        }
+        public void addKorpa(string isbn, string user)
+        {
+           redis.AddItemToSet(user + ":korpa", isbn);
+            redis.Expire(user + ":korpa", 100);  // posle nekog vremena da se izbrise korpa
+        }
+        public string[] getKorpa(string user)
+        {
+            string[] korpa;
+            korpa=  redis.GetAllItemsFromSet(user + ":korpa").ToArray<string>();
+
+            return korpa;
+        }
+        public void deleteFromKorpa(string user,string isbn)
+        {
+            redis.RemoveItemFromSet(user + ":korpa", isbn);
+        }
+        public void deleteKorpa(string user)
+        {
+            redis.Remove(user + ":korpa");
+        }
+        public void naruci(Korisnik kor)
+        {
+            string[] knjige = getKorpa(kor.UserName);
+            if(redis.Exists(kor.UserName+":narucilac")==0)
+            redis.Set<string>(kor.UserName + ":narucilac", kor.ToJsonString());
+            foreach (string s in knjige)
+                redis.AddItemToSet(kor.UserName + ":narudzbina",s);
+
+            deleteKorpa(kor.UserName);
+        }
+        public List<List<string>> getNarudzbine()
+        {
+           List<string> lista= redis.SearchKeys("*" + ":narucilac");
+            List<List<string>> toret = new List<List<string>>();
+            List<Korisnik> korisnici = new List<Korisnik>();
+            foreach (string s in lista)
+            {
+                string val = redis.Get<string>(s);
+                Korisnik k = (Korisnik)JsonSerializer.DeserializeFromString(val, typeof(Korisnik));
+                List<string> pom = new List<string>();
+                pom.Add(k.UserName);
+                pom.Add(k.Ime + " " + k.Prezime);
+                pom.Add(k.Adresa);
+                pom.Add(k.Telefon);
+                string[] knjige = redis.GetAllItemsFromSet(k.UserName + ":narudzbina").ToArray<string>();
+                foreach(string kn in knjige)
+                {
+                    pom.Add(kn);
+                }
+                toret.Add(pom);
+            }
+            return toret;
+
+        }
+        public void isporuci(string user)
+        {
+            redis.Remove(user + ":narudzbina");
+            redis.Remove(user + ":narucilac");
+        }
+        public void deleteAll()
+        {
+            List<string> l = redis.SearchKeys("*");
+            foreach (string key in l)
+                redis.Remove(key);
         }
 
     }

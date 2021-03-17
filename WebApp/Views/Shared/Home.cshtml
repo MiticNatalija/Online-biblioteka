@@ -1,0 +1,106 @@
+﻿@model List<List<string>>
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+
+
+    var endTime = DateTime.UtcNow.AddSeconds(60);
+    var timeRemaining = TimeSpan.FromTicks(endTime.Ticks - DateTime.UtcNow.Ticks).TotalSeconds.ToString("#");
+}
+        <script>
+
+
+            var remSeconds =timeRemaining;
+            var secondsCounter = remSeconds % 60;
+
+            function formatNumber(number) {
+                if (number < 10)
+                    return '0' + number;
+                else return '' + number;
+            }
+
+            function startTick() {
+                document.getElementById('seconds').innerText = formatNumber( secondsCounter);
+                document.getElementById('minutes').innerText = formatNumber(parseInt(remSeconds / 60));
+
+                var _tick = setInterval(function () {
+                    if (remSeconds > 0) {
+                        remSeconds -= 1;
+                        secondsCounter -= 1;
+                        document.getElementById('seconds').innerText = formatNumber(secondsCounter);
+                        document.getElementById('minutes').innerText = formatNumber(parseInt(remSeconds / 60));
+                        if (secondsCounter == 0)
+                            secondsCounter = 60;
+                    }
+                    else {
+                        alert('Vasa sesija je istekla!');
+                        clearInterval(_tick);
+                    }
+                }, 1000);
+
+            }
+            startTick();
+        </script>
+      
+        
+    
+
+<div id="minutes"></div>
+<div id="seconds"></div>
+    <div class="row">
+
+        <div class="col-xs-6 col-md-4">
+
+            @{
+                if (Session["korisnik"] != null)
+                {
+                    <h4> Dobro dosli, @Session["korisnik"] !</h4>
+                }
+            }
+
+            <h3>Najnovije knjige </h3>
+            <br />
+
+            @foreach (List<string> item in Model)
+            {
+                <li>
+
+
+                    <h5>ISBN: @item[0]</h5>
+                    <h4>Naziv: </h4>
+                    <h3 class="btn-link">
+                        @Html.ActionLink(item[1], "GetKnjigaLink", "Book", new { isbn = item[0] }, null)
+                    </h3>
+                    <h5>Autor: @item[2]</h5>
+                    <h6>Datum izdavanja: @item[3]</h6>
+
+                    <br />
+                </li>
+            }
+            @using (Html.BeginForm("UcitajKnjige", "Home", FormMethod.Post))
+            {
+
+                <button type="submit" class="btn btn-sm btn-circle ">Još</button>
+
+
+            }
+        </div>
+
+        <div class="col-xs-6 col-md-4">
+            @using (Html.BeginForm("GetKnjigaLink", "Book", FormMethod.Post))
+            {
+                <h3>Izaberite knjigu</h3>
+                <br />
+                <label>ISBN:</label>
+                <br />
+                <input class="form-control" type="text" name="isbn" id="isbn" />
+
+                <br />
+                <button type="submit" class="btn btn-lg btn-success">Izaberi</button>
+            }
+        </div>
+
+    </div>
+

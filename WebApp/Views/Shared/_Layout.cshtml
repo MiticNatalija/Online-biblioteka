@@ -1,14 +1,61 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Web Knjige</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
-<body>
+<body background="~/Content/Images/knjigamain.jpg">
+   
+    @*@{ 
+        if (Session["korisnik"] != null)
+        {
+
+            var endTime = DateTime.UtcNow.AddSeconds( Session.Timeout*60);
+            var timeRemaining = TimeSpan.FromTicks(endTime.Ticks - DateTime.UtcNow.Ticks).TotalSeconds.ToString("#");
+    <script>
+        
+        
+            var remSeconds =timeRemaining;
+            var secondsCounter = remSeconds % 60;
+
+            function formatNumber(number) {
+                if (number < 10)
+                    return '0' + number;
+                else return '' + number;
+            }
+
+            function startTick() {
+                document.getElementById('seconds').innerText = formatNumber( secondsCounter);
+                document.getElementById('minutes').innerText = formatNumber(parseInt(remSeconds / 60));
+
+                var _tick = setInterval(function () {
+                    if (remSeconds > 0) {
+                        remSeconds -= 1;
+                        secondsCounter -= 1;
+                        document.getElementById('seconds').innerText = formatNumber(secondsCounter);
+                        document.getElementById('minutes').innerText = formatNumber(parseInt(remSeconds / 60));
+                        if (secondsCounter == 0)
+                            secondsCounter = 60;
+                    }
+                    else {
+                        alert('Vasa sesija je istekla!');
+                        clearInterval(_tick);
+                    }
+                }, 1000);
+
+        } startTick();
+    </script>
+            }
+
+        }*@
+
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -17,24 +64,58 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                @Html.ActionLink("Knjige", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+
+                    <li>@Html.ActionLink("Registracija", "IndexReg", "Korisnik")</li>
+
+
+                    <li>@Html.ActionLink("Prijavljivanje", "IndexLog", "Korisnik")</li>
+
+                    <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
+
+
+
+
+                    @{
+                        if (Session["korisnik"] != null)
+                        {
+                            <li class="nav-item active">@Html.ActionLink("Korpa", "KorpaPrikaz", "Book")</li>
+
+                            <li class="nav-item active">@Html.ActionLink("Odjavi se", "LogOut", "Korisnik")</li>
+                           @*<li class="nav-item active" id="minutes"> : </li>
+                            <li class="nav-item active" id="seconds"> </li>*@
+                            
+                        }
+                    }
+
+
                 </ul>
+
+
             </div>
         </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"></ul>
+        </div>
+    </div>
     </div>
 
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Web Knjige</p>
         </footer>
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+
+
 </body>
 </html>

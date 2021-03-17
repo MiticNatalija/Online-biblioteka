@@ -1,0 +1,120 @@
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\csc.exe
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\vbc.exe
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\WebApp.dll.config
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\WebApp.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\WebApp.pdb
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Helpers.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Mvc.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Razor.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Webpages.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Webpages.Razor.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Razor.xml
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Webpages.xml
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Webpages.Razor.xml
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Helpers.xml
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\System.Web.Mvc.xml
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\obj\Debug\WebApp.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\obj\Debug\WebApp.pdb
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\ServiceStack.Redis.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\ServiceStack.Text.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\ServiceStack.Interfaces.dll
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\KnjigeRedis.exe
+C:\Users\Natalija\documents\visual studio 2015\Projects\KnjigeRedis\WebApp\bin\KnjigeRedis.pdb
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\csc.exe
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\System.Collections.Immutable.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\System.Reflection.Metadata.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\vbc.exe
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\VBCSCompiler.exe
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\roslyn\VBCSCompiler.exe.config
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\WebApp.dll.config
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\WebApp.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\WebApp.pdb
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\KnjigeRedis.exe
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\Microsoft.Web.Infrastructure.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Helpers.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Mvc.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Razor.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Webpages.Deployment.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Webpages.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Webpages.Razor.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\ServiceStack.Redis.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\ServiceStack.Text.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\ServiceStack.Interfaces.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\KnjigeRedis.pdb
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\KnjigeRedis.exe.config
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Razor.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Webpages.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Webpages.Deployment.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Webpages.Razor.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Helpers.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\bin\System.Web.Mvc.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\obj\Debug\WebApp.csproj.CoreCompileInputs.cache
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\obj\Debug\WebApp.csproj.CopyComplete
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\obj\Debug\WebApp.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\WebApp\obj\Debug\WebApp.pdb
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\csc.exe
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\System.Collections.Immutable.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\System.Reflection.Metadata.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\vbc.exe
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\VBCSCompiler.exe
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\roslyn\VBCSCompiler.exe.config
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\WebApp.dll.config
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\WebApp.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\WebApp.pdb
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\KnjigeRedis.exe
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\Microsoft.Web.Infrastructure.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Helpers.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Mvc.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Razor.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Webpages.Deployment.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Webpages.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Webpages.Razor.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\ServiceStack.Redis.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\ServiceStack.Interfaces.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\ServiceStack.Text.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\KnjigeRedis.pdb
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\KnjigeRedis.exe.config
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Razor.xml
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Webpages.xml
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Webpages.Deployment.xml
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Webpages.Razor.xml
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Helpers.xml
+D:\Elfak\Projekti\KnjigeRedis\WebApp\bin\System.Web.Mvc.xml
+D:\Elfak\Projekti\KnjigeRedis\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
+D:\Elfak\Projekti\KnjigeRedis\WebApp\obj\Debug\WebApp.csproj.CoreCompileInputs.cache
+D:\Elfak\Projekti\KnjigeRedis\WebApp\obj\Debug\WebApp.csproj.CopyComplete
+D:\Elfak\Projekti\KnjigeRedis\WebApp\obj\Debug\WebApp.dll
+D:\Elfak\Projekti\KnjigeRedis\WebApp\obj\Debug\WebApp.pdb

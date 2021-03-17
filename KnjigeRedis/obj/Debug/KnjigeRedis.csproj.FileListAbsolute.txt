@@ -1,0 +1,85 @@
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\KnjigeRedis.exe.config
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\KnjigeRedis.exe
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\KnjigeRedis.pdb
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Client.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Common.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Interfaces.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.OrmLite.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Redis.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.ServiceInterface.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Text.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\System.Buffers.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\System.Memory.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\System.ValueTuple.dll
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Client.xml
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\System.Buffers.xml
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\System.Memory.xml
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\bin\Debug\System.ValueTuple.xml
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.csprojResolveAssemblyReference.cache
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.Form1.resources
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.Properties.Resources.resources
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.csproj.GenerateResource.Cache
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.exe
+c:\users\natalija\documents\visual studio 2015\Projects\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.pdb
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\KnjigeRedis.exe.config
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\KnjigeRedis.exe
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\KnjigeRedis.pdb
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Client.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Common.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Interfaces.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.OrmLite.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Redis.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.ServiceInterface.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Text.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\System.Buffers.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\System.Memory.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\System.ValueTuple.dll
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Client.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\System.Buffers.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\System.Memory.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\bin\Debug\System.ValueTuple.xml
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.csprojAssemblyReference.cache
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.Form1.resources
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.Properties.Resources.resources
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.csproj.GenerateResource.cache
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.csproj.CoreCompileInputs.cache
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.csproj.CopyComplete
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.exe
+E:\Elfak\4. godina\Napredne baze podataka\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.pdb
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\KnjigeRedis.exe.config
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\KnjigeRedis.exe
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\KnjigeRedis.pdb
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Client.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Common.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Interfaces.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.OrmLite.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Redis.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.ServiceInterface.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Text.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\System.Buffers.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\System.Memory.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\System.ValueTuple.dll
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\ServiceStack.Client.xml
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\System.Buffers.xml
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\System.Memory.xml
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\bin\Debug\System.ValueTuple.xml
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.csprojAssemblyReference.cache
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.Form1.resources
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.Properties.Resources.resources
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.csproj.GenerateResource.cache
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.csproj.CoreCompileInputs.cache
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.csproj.CopyComplete
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.exe
+D:\Elfak\Projekti\KnjigeRedis\KnjigeRedis\obj\Debug\KnjigeRedis.pdb
